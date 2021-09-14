@@ -1,18 +1,36 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/dashboard">Dashboard</router-link>
-      <router-link to="/bitcoin-details">Bitcoin Details</router-link>
-      <router-link to="/bitcoin-umrechner">Bitcoin Umrechner</router-link>
-      <router-link to="/bitcoin-diagram">Bitcoin Diagram</router-link>
-      <router-link to="/bitcoin-umrechner">Bitcoin Umrechner</router-link>
-      <router-link to="/meine-bitcoin">Meine Bitcoin</router-link>
+        <v-card class="overflow-hidden">
+          <v-app-bar
+          color="#6A76AB"
+          dark
+          shrink-on-scroll
+          prominent
+          src="https://picsum.photos/1920/1080?random"
+          fade-img-on-scroll
+          scroll-target="#scrolling-techniques-3"
+        >
+            <template v-slot:extension>
+              <v-tabs align-with-title>
+                <v-tab><router-link to="/dashboard">DASHBOARD</router-link></v-tab>
+                <v-tab><router-link to="/bitcoin-details">BITCOIN DETAILS</router-link></v-tab>
+                <v-tab><router-link to="/bitcoin-umrechner">BITCOIN UMRECHNER</router-link></v-tab>
+                <v-tab><router-link to="/bitcoin-diagram">BITCOIN DIAGRAMM</router-link></v-tab>
+                <v-tab><router-link to="/meine-bitcoin">MEINE BITCOIN </router-link></v-tab>
+              </v-tabs>
+            </template>
+          </v-app-bar>
+        </v-card>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+
+</script>
+
 
 <style lang="less">
 #app {
@@ -21,18 +39,22 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  
 }
 
 #nav {
-  padding: 30px;
-
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 24px;
+        text-align: left;
+
+    color: white;
+    margin: 0px 20px 0 20px;
+    text-decoration-line: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      font-weight: bold;
     }
   }
+  
 }
 </style>
