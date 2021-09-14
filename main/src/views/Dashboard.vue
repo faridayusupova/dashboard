@@ -2,17 +2,40 @@
 <v-container
 >
 <h1>Dashboard</h1>
-    <v-row>
+    <v-row v-row justify="space-around">
       <v-col
         v-for="ticker in tickers"
         :key="ticker.url"
         class="d-flex child-flex"
-        cols="2"
+        cols="3"
       >
-      {{ ticker.symbol }}
-      {{ ticker.price_24h }}
-      {{ ticker.volume_24h }}
-      {{ ticker.last_trade_price }}
+      <v-card
+      elevation="3"
+      class="mx-auto"
+      height="200px">
+        <v-card-title>
+          {{ ticker.symbol }}    
+        </v-card-title>
+        <v-spacer></v-spacer>
+        <tbody>
+        <tr>
+          <td>Letzte 15 Minuten</td>
+          <td>{{ ticker.price_24h }}</td>
+        </tr>
+        <tr>
+          <td>Aktuell</td>
+          <td>{{ ticker.price_24h }}</td>
+        </tr>
+        <tr>
+          <td>Kaufpreis</td>
+          <td>{{ ticker.price_24h }}</td>
+        </tr>
+        <tr>
+          <td>Veraufpreis</td>
+          <td>{{ ticker.price_24h }}</td>
+        </tr>
+      </tbody>
+      </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -47,5 +70,9 @@ h1 {
 margin: 20px 0 20px 0;
 text-decoration: underline;
 text-decoration-color: red;
+}
+th, td {
+  text-align: left;
+  padding: 0 0 5px 15px;
 }
 </style>

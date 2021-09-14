@@ -1,5 +1,5 @@
 <template>
   <div class="meine-bitcoin">
-    <h1>This is an about page</h1>
+    <h1>This is an meine bitcoin page</h1>
   </div>
 </template>
